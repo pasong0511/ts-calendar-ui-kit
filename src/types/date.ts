@@ -17,10 +17,10 @@ export interface IViewDate {
 }
 
 export interface IInfomationViewDate extends IViewDate {
-    holiday: boolean;
-    holiday_name: string | null;
-    restDay: boolean;
-    active: boolean;
+    holiday?: boolean;
+    holiday_name?: string | null;
+    restDay?: boolean;
+    active?: boolean;
 }
 
 export interface IHolidayAPIData {

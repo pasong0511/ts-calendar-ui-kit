@@ -118,10 +118,19 @@ export const getCreateDateList = (
     viewYear: number,
     ViewMonth: number,
     today: string,
-    holidayList: IHolidayDic[]
+    holidayList?: IHolidayDic[]
 ): IInfomationViewDate[] => {
-    const defaultDateList = createDate(viewYear, ViewMonth, today);
-    const infomationDateList = addInfomationDate(defaultDateList, holidayList);
-
-    return infomationDateList;
+    if (holidayList) {
+        const defaultDateList = createDate(viewYear, ViewMonth, today);
+        return addInfomationDate(defaultDateList, holidayList);
+    }
+    return createDate(viewYear, ViewMonth, today);
 };
+
+// export const getCreateDateList = (
+//     viewYear: number,
+//     ViewMonth: number,
+//     today: string
+// ): IViewDate[] => {
+//     return createDate(viewYear, ViewMonth, today);
+// };
